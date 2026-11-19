@@ -757,33 +757,33 @@ body[data-fx=off] .art-frame,body[data-fx=off] .af-photo,body[data-fx=off] .af-p
 @media(max-width:360px){.px-row{grid-template-columns:74px auto minmax(0,1fr) auto!important;gap:6px}.px-label{font-size:16px}}
 
 /* ---------- selo de custo das habilidades ---------- */
-.occ-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.occ-head h3{margin:0;min-width:0}
-.panel-head:has(.cost-seals){gap:10px}
+.occ-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.occ-head h3{margin:0!important;min-width:0}
+.panel-head:has(.cost-seals){gap:10px;align-items:center}
 .panel-head:has(.cost-seals) h3{flex:1;min-width:0}
 .cost-seals{display:inline-flex;gap:6px;flex-shrink:0;align-items:center}
-.cost-seal{--sc:var(--el);--sc-rgb:var(--el-rgb);position:relative;width:38px;height:38px;display:inline-grid;place-items:center;flex-shrink:0;cursor:default;filter:drop-shadow(0 0 7px rgba(var(--sc-rgb),.45));animation:csIn .6s var(--ease-spring) backwards}
+.cost-seal{--sc:var(--el);--sc-rgb:var(--el-rgb);display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 9px 0 0;border-radius:13px;background:linear-gradient(90deg,rgba(var(--sc-rgb),.16),rgba(var(--sc-rgb),.04));box-shadow:inset 0 0 0 1px rgba(var(--sc-rgb),.35),0 0 14px rgba(var(--sc-rgb),.12);cursor:default;animation:csIn .5s var(--ease-spring) backwards;transition:box-shadow .25s}
 .cost-seal.pv{--sc:#e5262f;--sc-rgb:229,38,47}
-.cost-seal.big{width:46px;height:46px}
-.cost-seal svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transition:transform .5s var(--ease-spring)}
-.cost-seal .cs-gem{fill:rgba(var(--sc-rgb),.16);stroke:var(--sc);stroke-width:1.6}
-.cost-seal .cs-ring{fill:rgba(8,8,10,.86);stroke:rgba(var(--sc-rgb),.55);stroke-width:.9}
-.cost-seal .cs-shine{fill:rgba(var(--sc-rgb),.08)}
-.cost-seal b{position:relative;margin-top:-3px;font:italic 700 15px/1 var(--serif);color:var(--sc);text-shadow:0 0 8px rgba(var(--sc-rgb),.8)}
-.cost-seal.big b{font-size:18px}
-.cost-seal.pv b{margin-top:5px}
-.cost-seal small{position:absolute;left:50%;bottom:-7px;transform:translateX(-50%);padding:1px 4px;border-radius:2px;background:#0a0a0b;border:1px solid rgba(var(--sc-rgb),.5);font:700 7px/1.2 ui-monospace,monospace;letter-spacing:1.5px;color:var(--sc)}
-.cost-seal:after{content:'';position:absolute;inset:-3px;border-radius:50%;background:radial-gradient(circle,rgba(var(--sc-rgb),.35),transparent 65%);opacity:0;animation:csPulse 3.2s ease-in-out infinite;pointer-events:none}
-.cost-seal:hover svg{transform:rotate(45deg) scale(1.06)}
-.cost-seal.pv:hover svg{transform:scale(1.1)}
-@keyframes csIn{from{opacity:0;transform:scale(.4) rotate(-40deg)}}
-@keyframes csPulse{0%,100%{opacity:0;transform:scale(.8)}50%{opacity:.8;transform:scale(1.15)}}
-body[data-el=sangue] .cost-seal:after{animation:elBeat 1.4s ease-in-out infinite;opacity:.6}
+.cost-seal:hover{box-shadow:inset 0 0 0 1px rgba(var(--sc-rgb),.7),0 0 18px rgba(var(--sc-rgb),.35)}
+.cs-g{position:relative;width:28px;height:28px;margin:-1px 0 -1px -1px;display:grid;place-items:center;flex-shrink:0;filter:drop-shadow(0 0 5px rgba(var(--sc-rgb),.55))}
+.cs-g svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .5s var(--ease-spring)}
+.cost-seal:hover .cs-g svg{transform:rotate(90deg)}
+.cost-seal.pv:hover .cs-g svg{transform:scale(1.08)}
+.cost-seal .cs-gem{fill:#0b0b0d;stroke:var(--sc);stroke-width:2}
+.cost-seal .cs-ring{fill:rgba(var(--sc-rgb),.18);stroke:rgba(var(--sc-rgb),.45);stroke-width:1}
+.cost-seal b{position:relative;font:italic 700 14px/1 var(--serif);color:var(--el-hi);text-shadow:0 0 6px rgba(var(--sc-rgb),.9)}
+.cost-seal.pv b{color:#ffd9d6;margin-top:4px;font-size:12.5px}
+.cost-seal small{font:700 9px/1 ui-monospace,monospace;letter-spacing:1.6px;color:var(--sc)}
+.cost-seal.big{height:30px;border-radius:15px}
+.cost-seal.big .cs-g{width:32px;height:32px}
+.cost-seal.big b{font-size:16px}
+@keyframes csIn{from{opacity:0;transform:translateX(8px) scale(.9)}}
+body[data-el=sangue] .cost-seal .cs-g{animation:elBeat 1.4s ease-in-out infinite}
 body[data-el=energia] .cost-seal.pd b{animation:elTextGlitch 4s infinite}
-body[data-el=conhecimento] .cost-seal.pd{animation:csIn .6s var(--ease-spring) backwards,elShine 3s ease-in-out infinite}
-body[data-el=morte] .cost-seal.pd svg{animation:elRevSpin 24s linear infinite}
+body[data-el=conhecimento] .cost-seal.pd .cs-g{animation:elShine 3s ease-in-out infinite}
+body[data-el=morte] .cost-seal.pd .cs-g svg{animation:elRevSpin 24s linear infinite}
 body[data-el=medo] .cost-seal.pd b{animation:elFlick 6s infinite}
-body[data-fx=off] .cost-seal,body[data-fx=off] .cost-seal *,body[data-fx=off] .cost-seal:after{animation:none!important}
+body[data-fx=off] .cost-seal,body[data-fx=off] .cost-seal *{animation:none!important}
 .cost-tag{font-style:normal;font:700 10px ui-monospace,monospace;letter-spacing:1px;margin-left:6px;padding:2px 6px;border-radius:3px;background:rgba(var(--el-rgb),.14);color:var(--el)}
 
 /* ---------- emblema de nível ---------- */
@@ -1257,7 +1257,7 @@ function layoutFrame(){const f=$('.poster-visual.framed .art-frame');if(!f)retur
  if(!hits(st)&&!hits(lf))tryBox(vis.left,vis.top,vis.right,bot0);else{const L=Math.max(vis.left,hits(st)?st.right:-1e9,hits(lf)?lf.right:-1e9);tryBox(L,top0,vis.right,bot0);if(hits(st))tryBox(Math.max(vis.left,hits(lf)?lf.right:-1e9),Math.max(top0,st.bottom),vis.right,bot0);}
  if(!best||best.h<170){f.style.display='none';return;}f.style.height=Math.round(best.h)+'px';f.style.left=Math.round(best.cx-vis.left)+'px';f.style.top=Math.round(best.cy-vis.top)+'px';}
 addEventListener('resize',()=>{clearTimeout(layoutFrame.t);layoutFrame.t=setTimeout(layoutFrame,80);});
-function costSeals(pd,pv,big=false){pd=int(pd);pv=int(pv);let h='';if(pd)h+=`<span class="cost-seal pd${big?' big':''}" title="Custa ${pd} PD" aria-label="Custa ${pd} PD"><svg viewBox="0 0 40 40" aria-hidden="true"><path class="cs-gem" d="M20 1.5 38.5 20 20 38.5 1.5 20Z"/><path class="cs-ring" d="M20 6.5 33.5 20 20 33.5 6.5 20Z"/><path class="cs-shine" d="M20 6.5 33.5 20H6.5Z"/></svg><b>${pd}</b><small>PD</small></span>`;if(pv)h+=`<span class="cost-seal pv${big?' big':''}" title="Custa ${pv} PV" aria-label="Custa ${pv} PV"><svg viewBox="0 0 40 40" aria-hidden="true"><path class="cs-gem" d="M20 2C27 12 33 19 33 26.5A13 13 0 0 1 7 26.5C7 19 13 12 20 2Z"/><path class="cs-ring" d="M20 8.5C25 16 28.5 21 28.5 26.5A8.5 8.5 0 0 1 11.5 26.5C11.5 21 15 16 20 8.5Z"/></svg><b>${pv}</b><small>PV</small></span>`;return h?`<span class="cost-seals">${h}</span>`:'';}
+function costSeals(pd,pv,big=false){pd=int(pd);pv=int(pv);const gem=(k,n,d,ring)=>`<span class="cost-seal ${k}${big?' big':''}" title="Custa ${n} ${k.toUpperCase()}" aria-label="Custa ${n} ${k.toUpperCase()}"><span class="cs-g"><svg viewBox="0 0 40 40" aria-hidden="true"><path class="cs-gem" d="${d}"/><path class="cs-ring" d="${ring}"/></svg><b>${n}</b></span><small>${k.toUpperCase()}</small></span>`;let h='';if(pd)h+=gem('pd',pd,'M20 1.5 38.5 20 20 38.5 1.5 20Z','M20 7 33 20 20 33 7 20Z');if(pv)h+=gem('pv',pv,'M20 1.5C27.5 12 34 19.5 34 27A14 14 0 0 1 6 27C6 19.5 12.5 12 20 1.5Z','M20 8.5C25 16 29 21.5 29 27A9 9 0 0 1 11 27C11 21.5 15 16 20 8.5Z');return h?`<span class="cost-seals">${h}</span>`:'';}
 const costLabel=(pd,pv)=>[pv?'−'+pv+' PV':'',pd?'−'+pd+' PD':''].filter(Boolean).join(' · ');
 let levelFx=0;
 function levelHTML(c){const L=c.level,seg=Array.from({length:10},(_,i)=>{const a0=(-90+i*36+3)*Math.PI/180,a1=(-90+i*36+33)*Math.PI/180,r=28,p=a=>(32+r*Math.cos(a)).toFixed(2)+' '+(32+r*Math.sin(a)).toFixed(2);return `<path class="${i<L?'on':''}${i===L-1?' tip':''}" d="M${p(a0)}A${r} ${r} 0 0 1 ${p(a1)}" style="--d:${i*40}ms"/>`;}).join('');const up=levelFx;levelFx=0;
