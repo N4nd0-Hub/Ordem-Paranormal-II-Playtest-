@@ -717,6 +717,8 @@ body[data-fx=low] .fear-sigil>*,body[data-fx=low] .poster-name-area .name-input{
   .el-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .el-switch .button-label{display:none}
   .set-row{grid-template-columns:1fr!important;gap:14px}
+  .poster-status>.poster-extra{grid-column:1/-1}
+  .px-row{grid-template-columns:86px auto minmax(0,1fr) auto}
   .toolbar .caret{display:none}
   .pop-menu{min-width:240px}
 }
@@ -752,6 +754,7 @@ body[data-el=energia] .af-photo{animation:afGlitch 6s infinite}
 body[data-el=medo] .af-photo .character-art{animation:elFlick 7s infinite}
 body[data-fx=off] .art-frame,body[data-fx=off] .af-photo,body[data-fx=off] .af-photo .character-art,body[data-fx=off] .af-sigil{animation:none!important}
 @media(max-width:740px){.art-frame{left:50%;height:92%;padding:9px 9px 46px}.af-sigil{width:38px;height:38px;bottom:28px}.art-tools-row{justify-content:center}}
+@media(max-width:360px){.px-row{grid-template-columns:74px auto minmax(0,1fr) auto!important;gap:6px}.px-label{font-size:16px}}
 @media print{#el-fx,.el-ritual,.pop-menu{display:none!important}}
 </style>
 
